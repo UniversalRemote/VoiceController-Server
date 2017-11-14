@@ -1,5 +1,8 @@
+let io;
 
-let initController = function (baseEndpoint) {
+let initController = function (helpers) {
+    io = helpers.io;
+    let baseEndpoint = helpers.baseRoute;
     let dialogBaseEndpoint = baseEndpoint + "/dialogflow";
     return [
         {
@@ -18,6 +21,7 @@ let initController = function (baseEndpoint) {
 };
 
 let parseDialogRequest = function(req, res){
+    io.sockets.emit("new-command", req.body);
     console.log("\n\nRequest received from DialogFlow:");
     console.log(req.body);
     res.send(200);

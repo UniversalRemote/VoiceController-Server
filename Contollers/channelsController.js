@@ -2,7 +2,8 @@
  * Created by AlejandroC on 10/2/2017.
  */
 
-let initController = function (baseEndpoint) {
+let initController = function (helpers) {
+    let baseEndpoint = helpers.baseRoute;
     let channelBaseEndpoint = baseEndpoint + "/channels";
     return [
         {
