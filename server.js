@@ -5,6 +5,7 @@
 let baseRoute = "/api";
 let port = process.env.PORT || 8000;
 let RouteHelper = require("./Helpers/routesHelper");
+let DialogResponseHelper = require("./Helpers/dialogResponseHelper");
 let bodyParser = require("body-parser");
 let express = require("express");
 let app = express();
@@ -23,7 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let helpers = {
     io: io,
     baseRoute: baseRoute,
-    routes: new RouteHelper(app)
+    routes: new RouteHelper(app),
+    dialogResponse: new DialogResponseHelper()
 };
 
 //Initialize controllers

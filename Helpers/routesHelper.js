@@ -2,7 +2,7 @@
  * Created by AlejandroC on 10/2/2017.
  */
 
-class routesHelper {
+class RoutesHelper {
   constructor(app){
       this.app = app;
   }
@@ -32,4 +32,4 @@ class routesHelper {
   }
 }
 
-module.exports = routesHelper;
+module.exports = RoutesHelper;
