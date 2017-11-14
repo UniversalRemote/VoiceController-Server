@@ -24,7 +24,7 @@ let parseDialogRequest = function(req, res){
     io.sockets.emit("new-command", req.body);
     console.log("\n\nRequest received from DialogFlow:");
     let channel = req.body.result.parameters.channel;
-    res.send($`Changing channel to {channel}`);
+    res.send(`Changing channel to ${channel}`);
 };
 
 module.exports = initController;
