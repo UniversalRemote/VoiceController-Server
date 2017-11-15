@@ -4,7 +4,7 @@ class DialogResponseHelper{
 
     makeSimpleResponse(text, conversationToken){
         return {
-            conversation_token: conversationToken || Math.ceil(Math.random()*100),
+            conversation_token: conversationToken || Math.ceil(Math.random()*100) + "",
             expect_user_response: false,
             final_response: {
                 simple_response: {
