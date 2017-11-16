@@ -1,6 +1,3 @@
-/**
- * Created by AlejandroC on 10/2/2017.
- */
 
 let initController = function (helpers) {
     let baseEndpoint = helpers.baseRoute;
