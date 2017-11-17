@@ -1,10 +1,44 @@
 [
   {
     "channelNames": [
-      "name1",
-      "name2",
-      "name3"
+      "CNN",
+      "Cable News Network"
     ],
-    "channelNumber": 15
+    "channelNumber": -1
+  },
+  {
+    "channelNames": [
+      "FNC",
+      "Fox News",
+      "Fox News Channel"
+    ],
+    "channelNumber": -1
+  },
+  {
+    "channelNames": [
+      "ABC News",
+      "American Broadcasting Company News"
+    ],
+    "channelNumber": -1
+  },
+  {
+    "channelNames": [
+      "MSNBC"
+    ],
+    "channelNumber": -1
+  },
+  {
+    "channelNames": [
+      "name1",
+      "name2"
+    ],
+    "channelNumber": -1
+  },
+  {
+    "channelNames": [
+      "name1",
+      "name2"
+    ],
+    "channelNumber": -1
   }
 ]
