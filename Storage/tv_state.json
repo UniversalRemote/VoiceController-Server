@@ -1,7 +1,7 @@
 {
   "protocol": "NEC",
   "tvName": "Austin's TV",
-  "piEndpoint": " http://home.austinseber.com:20000/sling",
+  "piEndpoint": "http://home.austinseber.com:20000/sling",
   "channelName": "unknown",
   "channelNumber": -1,
   "volume": -1,

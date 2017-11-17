@@ -1,5 +1,6 @@
 let io;
 let dialogResponseHelper;
+let DialogParseHelper = require("../Helpers/dialogParseHelper");
 
 let initController = function (helpers) {
     io = helpers.io;
@@ -24,9 +25,7 @@ let initController = function (helpers) {
 
 let parseDialogRequest = function(req, res){
     io.sockets.emit("new-command", req.body);
-    console.log("\n\nRequest received from DialogFlow:");
-
-    let response = dialogResponseHelper.makeSimpleResponse(`Changing channel to ${req.body.result.parameters.channel}`);
+    let response = DialogParseHelper.parseIntent(req.body);
     res.send(response);
 };
 
