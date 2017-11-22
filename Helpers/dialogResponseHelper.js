@@ -1,8 +1,5 @@
 class DialogResponseHelper{
-
-    constructor(){}
-
-    makeSimpleResponse(text, conversationToken){
+    static makeSimpleResponse(text, conversationToken){
         return {
             speech: text,
             display_text: text,

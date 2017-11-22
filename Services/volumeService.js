@@ -1,39 +1,46 @@
-let fs = require("fs");
-let tvStateDir = "Storage/tv_state.json";
+let DialogResponseHelper = require("../Helpers/dialogResponseHelper");
+let RaspberryPiHelper = require("../Helpers/raspberryPiHelper");
+let RaspberryPiService = require("../Services/raspberryPiService");
+let wordsToNumbers = require("words-to-numbers");
 
 class VolumeService{
 
-    static getVolume(callback){
-        fs.readdir(tvStateDir, 'utf8', (data)=>{
-            let tvState = JSON.parse(data);
-            callback(tvState.volume);
-        });
+    static increaseVolume(request){
+        let volumeIncrease = parseInt(request.result.parameters.volume);
+        if(isNaN(volumeIncrease))
+            volumeIncrease = wordsToNumbers(volumeIncrease);
+
+        let volumeUpHex = RaspberryPiHelper.getVolumeUpHex();
+        let hexValues = [];
+
+        //Add one hex value for each time we wanna increase the volume
+        for(let i=0; i<volumeIncrease; i++){
+            hexValues.push(volumeUpHex);
+        }
+
+        let payload = RaspberryPiHelper.getPayloadWithHexes(hexValues);
+
+        RaspberryPiService.sendPostRequest(payload);
+        return DialogResponseHelper.makeSimpleResponse(`Increasing volume by ${volumeIncrease}`)
     }
 
-    static changeVolumeTo(newVolume){
-        fs.readdir(tvStateDir, 'utf8', (data)=>{
-            let tvState = JSON.parse(data);
-            tvState.volume = newVolume;
-            fs.writeFile(tvStateDir, JSON.stringify(tvState));
-        });
-    }
+    static decreaseVolume(request){
+        let volumeDecrease = parseInt(request.result.parameters.volume);
+        if(isNaN(volumeDecrease))
+            volumeDecrease = wordsToNumbers(volumeDecrease);
 
-    static increaseVolumeBy(volumeIncrease){
-        fs.readdir(tvStateDir, 'utf8', (data)=>{
-            let tvState = JSON.parse(data);
-            tvState.volume += volumeIncrease;
-            if(tvState.volume > 100) tvState.volume = 100;
-            fs.writeFile(tvStateDir, JSON.stringify(tvState));
-        });
-    }
+        let volumeDownHex = RaspberryPiHelper.getVolumeDownHex();
+        let hexValues = [];
 
-    static decreaseVolumeBy(volumeDecrease){
-        fs.readdir(tvStateDir, 'utf8', (data)=>{
-            let tvState = JSON.parse(data);
-            tvState.volume -= volumeDecrease;
-            if(tvState.volume < 0) tvState.volume = 0;
-            fs.writeFile(tvStateDir, JSON.stringify(tvState));
-        });
+        //Add one hex value for each time we wanna decrease the volume
+        for(let i=0; i<volumeDecrease; i++){
+            hexValues.push(volumeDownHex);
+        }
+
+        let payload = RaspberryPiHelper.getPayloadWithHexes(hexValues);
+
+        RaspberryPiService.sendPostRequest(payload);
+        return DialogResponseHelper.makeSimpleResponse(`Decreasing the volume by ${volumeDecrease}`)
     }
 }
 

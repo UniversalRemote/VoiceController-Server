@@ -1,22 +1,28 @@
-let request = require('request');
+let RaspberryPiHelper = require("../Helpers/raspberryPiHelper");
+let RaspberryPiService = require("../Services/raspberryPiService");
+let DialogResponseHelper = require("../Helpers/dialogResponseHelper");
 
 class ChannelService{
 
-    static changeChannel(channel){
-        let piRequest = {
-            info: {
-                protocol: "SAMSUNG",
-                hexCode: []
-            }
-        };
+    static changeChannel(request){
+        let channel = request.result.parameters.channel;
+        let number = RaspberryPiHelper.getChannelNumberFromUserInput(channel);
 
-    }
+        //Parsing the number
+        let hexValues = [];
+        let digits = number.toString().split("").map((t) => { return parseInt(t) });
 
-    static toNumber(channel){
-        return 45;
-    }
+        for(let digit of digits){
+            let buttonCode = RaspberryPiHelper.getButtonCodeFromNumber(digit);
+            hexValues.push(RaspberryPiHelper.getButtonHex(buttonCode));
+        }
 
-    static getHexValues(channelNumber){
+        //Creating payload for POST request
+        let payload = RaspberryPiHelper.getPayloadWithHexes(hexValues);
 
+        RaspberryPiService.sendPostRequest(payload);
+        return DialogResponseHelper.makeSimpleResponse(`Changing channel to ${channel}`);
     }
 }
+
+module.exports = ChannelService;
