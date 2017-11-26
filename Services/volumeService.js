@@ -42,6 +42,14 @@ class VolumeService{
         RaspberryPiService.sendPostRequest(payload);
         return DialogResponseHelper.makeSimpleResponse(`Decreasing the volume by ${volumeDecrease}`)
     }
+
+    static mute(request){
+        let muteHex = RaspberryPiHelper.getMuteHex();
+        let payload = RaspberryPiHelper.getPayloadWithHexes([muteHex]);
+
+        RaspberryPiService.sendPostRequest(payload);
+        return DialogResponseHelper.makeSimpleResponse(`Muting on/off the TV`);
+    }
 }
 
 module.exports = VolumeService;

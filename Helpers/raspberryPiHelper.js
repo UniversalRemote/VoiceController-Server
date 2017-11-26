@@ -53,6 +53,14 @@ class RaspberryPiHelper{
         return RaspberryPiHelper.getButtonHex("KEY_VOLUME_DOWN");
     }
 
+    static getMuteHex(){
+        return RaspberryPiHelper.getButtonHex("KEY_MUTE");
+    }
+
+    static getPowerHex(){
+        return RaspberryPiHelper.getButtonHex("KEY_POWER");
+    }
+
     static getChannelNumberFromUserInput(channelInput){
         let listings = [
             {

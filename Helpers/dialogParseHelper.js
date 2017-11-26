@@ -1,6 +1,7 @@
 let ChannelService = require("../Services/channelService");
 let VolumeService = require("../Services/volumeService");
 let DialogResponseHelper = require("../Helpers/dialogResponseHelper");
+let PowerAndSettingsService = require("../Services/powerAndSettingsService");
 
 class DialogParseHelper{
 
@@ -8,6 +9,10 @@ class DialogParseHelper{
         let intent = request.result.metadata.intentName;
 
         switch(intent){
+            case "Power":
+                return PowerAndSettingsService.power(request);
+            case "Mute":
+                return VolumeService.mute(request);
             case "Channel Change":
                 return ChannelService.changeChannel(request);
             case "Volume Change":
