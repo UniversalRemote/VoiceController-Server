@@ -85,6 +85,280 @@ class RaspberryPiHelper{
                     "American Broadcasting Company News"
                 ],
                 channelNumber: 7
+            },
+            {
+                channelNames: [
+                    "CBS",
+                    "Columbia Broadcasting System"
+                ],
+                channelNumber: 4
+            },
+            {
+                channelNames: [
+                    "FOX"
+                ],
+                channelNumber: 13
+            },
+            {
+                channelNames: [
+                    "QVC",
+                    "Quality Value Convenience"
+                ],
+                channelNumber: 20
+            },
+            {
+                channelNames: [
+                    "ION",
+                    "ION Television"
+                ],
+                channelNumber: 18
+            },
+            {
+                channelNames: [
+                    "FX",
+                    "Fox Extended"
+                ],
+                channelNumber: 23
+            },
+            {
+                channelNames: [
+                    "Discovery",
+                    "Discover Channel",
+                    "DISC"
+                ],
+                channelNumber: 25
+            },
+            {
+                channelNames: [
+                    "LIFE"
+                ],
+                channelNumber: 24
+            },
+            {
+                channelNames: [
+                    "ESPN",
+                    "Entertainment and Sports Programming Network"
+                ],
+                channelNumber: 26
+            },
+            {
+                channelNames: [
+                    "ESPN2",
+                    "Entertainment and Sports Programming Network 2"
+                ],
+                channelNumber: 27
+            },
+            {
+                channelNames: [
+                    "A&E",
+                    "Arts & Entertainment",
+                    "Arts and Entertainment",
+                    "A and E"
+                ],
+                channelNumber: 28
+            },
+            {
+                channelNames: [
+                    "USA",
+                    "USA Network"
+                ],
+                channelNumber: 29
+            },
+            {
+                channelNames: [
+                    "Spike",
+                    "Spike TV"
+                ],
+                channelNumber: 32
+            },
+            {
+                channelNames: [
+                    "Weather Channel",
+                    "The Weather Channel"
+                ],
+                channelNumber: 31
+            },
+            {
+                channelNames: [
+                    "NBC"
+                ],
+                channelNumber: 33
+            },
+            {
+                channelNames: [
+                    "MTV",
+                    "Music Television"
+                ],
+                channelNumber: 35
+            },
+            {
+                channelNames: [
+                    "Univision"
+                ],
+                channelNumber: 40
+            },
+            {
+                channelNames: [
+                    "Nick",
+                    "Nickelodeon"
+                ],
+                channelNumber: 41
+            },
+            {
+                channelNames: [
+                    "Disney Channel",
+                    "Disney"
+                ],
+                channelNumber: 42
+            },
+            {
+                channelNames: [
+                    "Cartoon Network",
+                    "Cartoons",
+                    "Toon"
+                ],
+                channelNumber: 43
+            },
+            {
+                channelNames: [
+                    "Comedy Central"
+                ],
+                channelNumber: 44
+            },
+            {
+                channelNames: [
+                    "TNT",
+                    "TNT Drama"
+                ],
+                channelNumber: 45
+            },
+            {
+                channelNames: [
+                    "History",
+                    "History Channel"
+                ],
+                channelNumber: 47
+            },
+            {
+                channelNames: [
+                    "Fox Sports"
+                ],
+                channelNumber: 48
+            },
+            {
+                channelNames: [
+                    "SyFy",
+                    "Science fiction",
+                    "Science fiction channel"
+                ],
+                channelNumber: 51
+            },
+            {
+                channelNames: [
+                    "AMC",
+                    "AMC Network"
+                ],
+                channelNumber: 52
+            },
+            {
+                channelNames: [
+                    "Food",
+                    "Food Channel"
+                ],
+                channelNumber: 59
+            },
+            {
+                channelNames: [
+                    "Travel",
+                    "Travel Channel"
+                ],
+                channelNumber: 58
+            },
+            {
+                channelNames: [
+                    "Animal Planet"
+                ],
+                channelNumber: 61
+            },
+            {
+                channelNames: [
+                    "Fox Sports 1",
+                    "Fox Sports one"
+                ],
+                channelNumber: 62
+            },
+            {
+                channelNames: [
+                    "MSNBC"
+                ],
+                channelNumber: 63
+            },
+            {
+                channelNames: [
+                    "CNBC"
+                ],
+                channelNumber: 64
+            },
+            {
+                channelNames: [
+                    "Golf",
+                    "Golf Channel"
+                ],
+                channelNumber: 65
+            },
+            {
+                channelNames: [
+                    "TBS",
+                    "Turner Broadcasting System"
+                ],
+                channelNumber: 67
+            },
+            {
+                channelNames: [
+                    "Fox Business"
+                ],
+                channelNumber: 74
+            },
+            {
+                channelNames: [
+                    "C-SPAN"
+                ],
+                channelNumber: 80
+            },
+            {
+                channelNames: [
+                    "NBA",
+                    "Basketball",
+                    'National Basketball Association'
+                ],
+                channelNumber: 254
+            },
+            {
+                channelNames: [
+                    "HBO",
+                    "Home Box Office"
+                ],
+                channelNumber: 300
+            },
+            {
+                channelNames: [
+                    "Tennis",
+                    "Tennis Channel"
+                ],
+                channelNumber: 256
+            },
+            {
+                channelNames: [
+                    "BBC",
+                    "BBC America"
+                ],
+                channelNumber: 228
+            },
+            {
+                channelNames: [
+                    "Fuse"
+                ],
+                channelNumber: 224
             }
         ];
         console.log(channelInput);
