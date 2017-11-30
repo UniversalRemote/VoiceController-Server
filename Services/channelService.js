@@ -21,7 +21,7 @@ class ChannelService{
         let payload = RaspberryPiHelper.getPayloadWithHexes(hexValues);
 
         RaspberryPiService.sendPostRequest(payload);
-        return DialogResponseHelper.makeSimpleResponse(`Changing channel to ${channel}`);
+        return DialogResponseHelper.makeSimpleResponse(`Changing channel to ${channel} - number: ${number} on your TV`);
     }
 }
 
