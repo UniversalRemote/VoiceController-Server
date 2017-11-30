@@ -1,14 +1,14 @@
 let DialogResponseHelper = require("../Helpers/dialogResponseHelper");
 let RaspberryPiHelper = require("../Helpers/raspberryPiHelper");
 let RaspberryPiService = require("../Services/raspberryPiService");
-let wordsToNumbers = require("words-to-numbers");
+let wordsToNumbers = require("words-to-numbers").wordsToNumbers;
 
 class VolumeService{
 
     static increaseVolume(request){
         let volumeIncrease = parseInt(request.result.parameters.volume);
         if(isNaN(volumeIncrease))
-            volumeIncrease = wordsToNumbers(volumeIncrease);
+            volumeIncrease = parseInt(volumeIncrease);
 
         let volumeUpHex = RaspberryPiHelper.getVolumeUpHex();
         let hexValues = [];
