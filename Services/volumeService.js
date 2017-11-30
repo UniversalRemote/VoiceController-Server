@@ -10,7 +10,7 @@ class VolumeService{
         if(isNaN(volumeIncrease))
                 volumeIncrease = 1;
 
-        let volumeUpHex = RaspberryPiHeliper.getVolumeUpHex();
+        let volumeUpHex = RaspberryPiHelper.getVolumeUpHex();
         let hexValues = [];
 
         //Add one hex value for each time we wanna increase the volume
