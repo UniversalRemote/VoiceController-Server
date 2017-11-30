@@ -8,7 +8,7 @@ class VolumeService{
     static increaseVolume(request){
         let volumeIncrease = parseInt(request.result.parameters.volume);
         if(isNaN(volumeIncrease))
-            volumeIncrease = parseInt(volumeIncrease);
+            volumeIncrease = 1;
 
         let volumeUpHex = RaspberryPiHelper.getVolumeUpHex();
         let hexValues = [];
