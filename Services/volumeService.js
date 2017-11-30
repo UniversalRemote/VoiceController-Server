@@ -7,13 +7,8 @@ class VolumeService{
 
     static increaseVolume(request){
         let volumeIncrease = parseInt(request.result.parameters.volume);
-        if(isNaN(volumeIncrease)){
-            if(volumeIncrease.toLowerCase().includes("max")){
-                volumeIncrease = 100;
-            }
-            else
+        if(isNaN(volumeIncrease))
                 volumeIncrease = 1;
-        }
 
         let volumeUpHex = RaspberryPiHeliper.getVolumeUpHex();
         let hexValues = [];
@@ -31,13 +26,8 @@ class VolumeService{
 
     static decreaseVolume(request){
         let volumeDecrease = parseInt(request.result.parameters.volume);
-        if(isNaN(volumeDecrease)){
-            if(volumeDecrease.toLowerCase().includes("min")){
-                volumeDecrease = 100;
-            }
-            else
-                volumeDecrease = 1;
-        }
+        if(isNaN(volumeDecrease))
+            volumeDecrease = 1;
 
         let volumeDownHex = RaspberryPiHelper.getVolumeDownHex();
         let hexValues = [];
